@@ -1,0 +1,45 @@
+{
+  "name": "basic-start",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "connected-react-router": "^4.4.1",
+    "flow-bin": "^0.79.1",
+    "history": "^4.7.2",
+    "prop-types": "latest",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-loadable": "^5.5.0",
+    "react-redux": "^5.0.7",
+    "react-router-config": "^1.0.0-beta.4",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.1.8",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "flow-remove-types": "^1.2.3",
+    "npm-run-all": "^4.1.3"
+  },
+  "scripts": {
+    "build-css": "node-sass-chokidar --include-path ./node_modules ./src/scss -o ./src/scss",
+    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./node_modules ./src/scss -o ./src/scss --watch --recursive",
+    "start-js": "react-scripts start",
+    "start": "npm-run-all -p start-js flow",
+    "build-js": "react-scripts build",
+    "build-flow": "npm run flow-remove-types src/ -d lib/",
+    "build": "npm-run-all build-css build-js build-flow",
+    "test": "react-scripts test --env=jsdom",
+    "flow": "flow",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
